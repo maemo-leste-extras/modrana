@@ -29,7 +29,7 @@ POT_FILE = $(TRANSLATIONS_DIR)/modrana.pot
 
 default: all
 
-all:
+all: VersionFile
 	rm -rf $(SOURCEDIR)
 	rm -rf $(BUILDDIR)
 	mkdir $(SOURCEDIR)
@@ -94,9 +94,10 @@ install:
 	cp packaging/fedora/modrana-qml.png $(DESTDIR)/usr/share/icons/hicolor/64x64/apps/
 	# install the desktop file
 	-mkdir -p $(DESTDIR)/usr/share/applications/
+	-mkdir -p $(DESTDIR)/usr/share/applications/hildon/
 	#cp packaging/fedora/modrana.desktop $(DESTDIR)/usr/share/applications/
 	#cp packaging/fedora/modrana-qt5.desktop $(DESTDIR)/usr/share/applications/
-	cp packaging/maemo/modrana.desktop $(DESTDIR)/usr/share/applications/hildon
+	cp packaging/maemo/modrana.desktop $(DESTDIR)/usr/share/applications/hildon/
 	# install the startup scripts
 	-mkdir -p $(DESTDIR)/usr/bin
 	#cp packaging/fedora/modrana $(DESTDIR)/usr/bin/
