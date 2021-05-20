@@ -246,16 +246,16 @@ release:
 
 .PHONY: clean install tag archive
 
-test-in-docker:
-	# run tests in a Docker container
-	sudo docker build -f tests/Dockerfile.test .
-
-test: test-python test-qml
-
-test-python:
-	# run tests for Python code
-	PYTHONPATH=core/bundle $(NOSETESTS) -w tests -v
-
-test-qml:
-	# run tests for QML code
-	qmltestrunner -input modules/gui_modules/gui_qt5/qml/tests/ 
+#test-in-docker:
+#	# run tests in a Docker container
+#	sudo docker build -f tests/Dockerfile.test .
+#
+#test: test-python test-qml
+#
+#test-python:
+#	# run tests for Python code
+#	PYTHONPATH=core/bundle $(NOSETESTS) -w tests -v
+#
+#test-qml:
+#	# run tests for QML code
+#	qmltestrunner -input modules/gui_modules/gui_qt5/qml/tests/ 
