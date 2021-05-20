@@ -48,6 +48,7 @@ all:
 	mkdir $(SOURCEDIR)/$(TRANSLATIONS_DIR)
 	cp $(TRANSLATIONS_DIR)/*.qm $(SOURCEDIR)/$(TRANSLATIONS_DIR)/
 	cp -r $(TRANSLATIONS_DIR)/mo $(SOURCEDIR)/$(TRANSLATIONS_DIR)/
+	$(RSYNC) -ar --exclude-from $(EXCLUDEFILE) $(SOURCEDIR)/ $(BUILDDIR)
 
 rsync:
 	# cleanup the source tree
@@ -93,15 +94,15 @@ install:
 	cp packaging/fedora/modrana-qml.png $(DESTDIR)/usr/share/icons/hicolor/64x64/apps/
 	# install the desktop file
 	-mkdir -p $(DESTDIR)/usr/share/applications/
-	cp packaging/fedora/modrana.desktop $(DESTDIR)/usr/share/applications/
-	cp packaging/fedora/modrana-qt5.desktop $(DESTDIR)/usr/share/applications/
+	#cp packaging/fedora/modrana.desktop $(DESTDIR)/usr/share/applications/
+	#cp packaging/fedora/modrana-qt5.desktop $(DESTDIR)/usr/share/applications/
+	cp packaging/maemo/modrana.desktop $(DESTDIR)/usr/share/applications/hildon
 	# install the startup scripts
 	-mkdir -p $(DESTDIR)/usr/bin
-	cp packaging/fedora/modrana $(DESTDIR)/usr/bin/
-	cp packaging/fedora/modrana-gtk $(DESTDIR)/usr/bin/
-	cp packaging/fedora/modrana-qt5 $(DESTDIR)/usr/bin/
-	# install the launcher
-	cp run/launcher/modrana $(DESTDIR)/usr/bin/
+	#cp packaging/fedora/modrana $(DESTDIR)/usr/bin/
+	#cp packaging/fedora/modrana-gtk $(DESTDIR)/usr/bin/
+	#cp packaging/fedora/modrana-qt5 $(DESTDIR)/usr/bin/
+	cp packaging/maemo/modrana-maemo $(DESTDIR)/usr/bin/
 
 install-sailfish:
 	-mkdir -p $(DESTDIR)/usr/share/harbour-modrana
