@@ -3,9 +3,7 @@ modules/gui_modules/gui_qml
 # remove QML unit tests
 modules/gui_modules/gui_qt5/qml/tests
 # remove some bigger device modules that are not needed on sailfish
-modules/device_modules/device_n900.py
 modules/device_modules/device_n9.py
-modules/device_modules/n900_maemo5_portrait.py
 modules/device_modules/device_bb10.py
 modules/device_modules/device_nemo.py
 modules/device_modules/device_neo.py
